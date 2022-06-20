@@ -44,17 +44,20 @@ const Home = () => {
         <h1 className="text-red-500 m-auto text-4xl font-bold flex justify-center">
           Dishwashers{" "}
         </h1>
+        {/* we are mapping though our card which is being displayed in our home
+        page. In order to give dynamic data to our cards, we have to pass props
+        to the singlecard.(we are using map method here to display multiple cards).  */}
         <div className={styles.contentcontainer}>
           {value.products &&
-            value.products.slice(1, 21).map((item) => (
+            value.products.slice(1, 21).map((value) => (
               <a className={styles.link}>
                 <div className={styles.content}>
                   <Singlecard
-                    title={item.title}
-                    image={item.image}
-                    price={item.variantPriceRange?.display?.max}
-                    reviews={item.reviews}
-                    productId={item.productId}
+                    title={value.title}
+                    image={value.image}
+                    price={value.variantPriceRange?.display?.max}
+                    reviews={value.reviews}
+                    productId={value.productId}
                   />
                 </div>
               </a>

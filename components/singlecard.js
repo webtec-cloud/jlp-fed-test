@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+// we are receiving our prop values with props de structure method on line number 6. we will use all these values to display our dynamic content.
 
 const Singlecard = ({ title, image, price, reviews, productId }) => {
   const Router = useRouter();
   console.log(Router);
+  // useRouter is a react hook also used in next.js, in useRouter we can use a dynamic route and has to be used within a function. 
   const Handleroute = () => {
     Router.push({
       pathname: `/mycart/`,
@@ -70,7 +72,7 @@ const Singlecard = ({ title, image, price, reviews, productId }) => {
 
           <button
             onClick={Handleroute}
-            className="bg-black text-white text-xs px-4 py-2 hover:bg-gray-200 hover:text-black"
+            className="bg-blue-400 text-white rounded-md drop-shadow-md h-8 w-24"
             type="submit"
           >
             Add to Cart
